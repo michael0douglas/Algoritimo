@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>vida sofrida de um clt 2.0</h1>
+    <p>digite seu salrio</p> <input type="number" name="" id="ipt_sal">
+    <select name="" id="sofra">
+    <option value=" 0.1 ">INSS</option>
+    <option value=" 0.2 ">IR</option>
+    <option value=" 0.05">VT</option>
+</select>
+    <button onclick="desconto()">ver desconto</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+function desconto () {
+var sal = Number (ipt_sal.value)
+var des = Number (sofra.value)
+zeca.innerHTML = (` Valor desse desconto: R$${sal*des.toFixed(2)}`)
+
+
+}
+
+
+</script>

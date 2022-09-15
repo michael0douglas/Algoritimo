@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sempre velho</h1>
+    <p> quantos anos você ja trabalho?</p> <input type="number" name="" id="idade"> <br>
+    <select name="" id="Velho">
+        <option value="40 "> Funcionário de empresa
+            privada</option>
+        <option value="35"> Funcionário de empresa
+            pública</option>
+        <option value="45 "> Empreendedor</option>
+    </select>
+    <button onclick="avanco()">Calcular aposentadoria</button>
+    <div id="veio">..</div>
+
+</body>
+
+</html>
+<script>
+    function avanco() {
+        var id = Number(idade.value)
+        var op = Number (Velho.value)
+        veio.innerHTML = `Você ainda terá que trabalhar por mais ${op-id} anos para se aposentar`
+    }
+</script>
