@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    <div id="div_lutador">Vida do Lutador: 1000</div>
+    <img src="https://nntheblog.com/wp-content/uploads/2022/02/Levi-Ackerman-1024x576.jpg" alt="200px" width="300px" id="img"><br>
+    <button onclick="apanhar()" id="id_btn1">Apanhar</button>
+    <button onclick="concrentrar()" id="id_btn2">Concentrar Força</button>
+</body>
+</html>
+<script>
+    var vida = Number (1000)
+    var img_lutador = ""
+    function apanhar(){
+        vida -= 100
+        div_lutador.innerHTML = `Vida do Lutador: ${(vida).toFixed(2)}`
+
+        if(vida <= 0){
+            div_lutador.innerHTML += "<br>Lutador Já Era!"
+            img.src = "https://www.sofilmesgratis.com/wp-content/uploads/2022/01/Levi-ferido.webp?ezimgfmt=rs:382x302/rscb3/ngcb3/notWebP"
+            id_btn1.disabled = true
+            id_btn2.disabled = true
+        }else{
+            div_lutador.innerHTML += "<br>Lutador Ainda Vivo!"
+        }
+    }
+    function concrentrar(){
+        vida *= 1.05
+        div_lutador.innerHTML = `Vida do Lutador: ${(vida).toFixed(2)}`
+
+        if(vida > 0){
+            div_lutador.innerHTML += "<br>Lutador Ainda Vivo!"
+        }else{
+
+        }
+    }

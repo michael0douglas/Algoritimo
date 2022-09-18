@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>economiaa</h1>
+    <p>qual sua meta de economia?</p> <input type="number" name="" id="ipt_eco"> <br>
+    <p>quanto ja tem guardado?</p> <input type="number" name="" id="ipt_porco"> <br>
+    <button onclick="anali ()"> analisar economia</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function anali () {
+        var meta = Number (ipt_eco.value)
+        var banco = Number (ipt_porco.value)
+        var palavra = ""
+        var conta = (meta - banco)
+        var contak = (banco - meta)
+        if (banco < meta) {
+palavra = `Força! Ainda em busca da meta! Falta R$${conta.toFixed(2)}`
+        } 
+        else if (banco >= meta) {
+            palavra = `Parabéns, meta alcançada! <br>  Meta ultrapassada em R$${contak.toFixed(2)}`
+        }else if (banco == meta) {
+            palavra ="Parabéns, meta alcançada!"
+        }
+
+        zeca.innerHTML = palavra
+    }
+</script>

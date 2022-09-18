@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>Avaliação do peso infantil</h2>
+
+    Escreva o peso da criança(ela tem que ter 5 anos): <br>
+    <input type="text" id="input_peso" onkeyup="ler_peso()">
+
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function ler_peso(){
+
+        var peso = input_peso.value
+
+        var analise = ""
+
+        if(peso <= 13.5){
+            analise = "Abaixo do peso"
+        }
+        else if(peso == 18.3){
+            analise = "Peso perfeito"
+        } else if (peso <= 21.2){
+            analise = "Peso na média"
+        } else {
+            analise = "Acima do peso"
+        }
+
+        div_mensagem.innerHTML = analise
+    }
+</script>

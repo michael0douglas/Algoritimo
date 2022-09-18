@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>projeto: gordice nunca mais</h1>
+    <p>quantos pães você come todo dia?</p> <br>
+    <input type="number" name="" id="ipt_pao">
+    <p>quantas bolachas você tem comido por dia?</p> <br>
+    <input type="number" name="" id="ipt_bola">
+    <p>quantos copos de achocolatado tem tomado por dia?</p> <br>
+    <input type="number" name="" id="ipt_achoco">
+    <button onclick="verifi()">verificar calorias!</button>
+    <div id="zeca">**</div>
+<!-- pao = 50
+colacha = 80
+achoco= 70 -->
+</body>
+</html>
+<script>
+    function verifi () {
+        var pao = Number (ipt_pao.value) * 50
+        var bolacha = Number (ipt_bola.value) * 80
+        var choco = Number (ipt_achoco.value) * 70
+        var palavra = ""
+        var conta = Number (pao + bolacha + choco)
+    if (conta <= 200) {
+palavra += "Parabéns, vai sair em forma da quarentena!"
+    } else if (conta < 400) {
+        palavra += "Cuidado, vai ficar mais 'fofinho(a)' após quarentena!"
+    } else { 
+    palavra = "Bom, acho que muitos não vão te reconhecer após a quarentena"
+    }
+    zeca.innerHTML = palavra
+    
+    }
+</script>

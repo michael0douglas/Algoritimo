@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    <div id="div_click">Você já clicou 0 vezes</div><br>
+    <button onclick="clica()">Clica neu</button>
+</body>
+</html>
+<script>
+    var clicks = 0
+
+    function clica(){
+        clicks++
+        div_click.innerHTML = `Você já clicou ${clicks} vezes`
+
+        if(clicks < 5){
+            div_click.innerHTML += "<br>Dedo fraquinho, hein"
+        }else if(clicks < 11){
+            div_click.innerHTML += "<br>Dedo bom, mano"
+        }else if(clicks < 16){
+            div_click.innerHTML += "<br>Gosta de clicar, hein!"
+        }else{
+            div_click.innerHTML += "<br>Eita dedo nervoso!"
+        }
+    }
+</script>

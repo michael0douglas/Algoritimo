@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+
+<body>
+    <div id="div_valor">Valor guardado: R$0.00</div>
+    <button onclick="guardar()">Guardar R$5,00</button>
+    <button onclick="gastar()">Gastar R$10,00</button>
+</body>
+
+</html>
+<script>
+    var saldo = 0
+
+    function guardar() {
+        saldo += 5
+        div_valor.innerHTML = `Valor guardado: R$${(saldo).toFixed(2)}`
+
+        if (saldo >= 0) {
+            div_valor.innerHTML += `<p style="color: blue">Finanças OK</p>`
+            if (saldo > 100) {
+                div_valor.innerHTML += `#ostentação`
+            }
+        } else {
+            div_valor.innerHTML += `<p style="color: red">Finanças em perigo</p>`
+            if (saldo < -20) {
+                div_valor.innerHTML += `Seu nome vai ficar sujo, hein?`
+            }
+        }
+    }
+
+    function gastar() {
+        saldo -= 10
+        div_valor.innerHTML = `Valor guardado: R$${(saldo).toFixed(2)}`
+
+        if (saldo >= 0) {
+            div_valor.innerHTML += `<p style="color: blue">Finanças OK</p>`
+            if (saldo > 100) {
+                div_valor.innerHTML += `#ostentação`
+            }
+        } else {
+            div_valor.innerHTML += `<p style="color: red">Finanças em perigo</p>`
+            if (saldo < -20) {
+                div_valor.innerHTML += `Seu nome vai ficar sujo, hein?`
+            }
+        }
+    }
+</script>

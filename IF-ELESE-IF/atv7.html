@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>economia</h1>
+<p>quanto tem economizado?</p> <input type="number" name="" id="ipt_eco"> <br>
+<button onclick="power()">poder de compra</button>
+<div id="zeca"></div>
+
+</body>
+</html>
+<script>
+    function power () {
+        var eco = Number (ipt_eco.value)
+        var palavra = ""
+        if (eco <= 0){
+            palavra = "Nada de compras triste =("
+        } else if (eco < 100 ) {
+            palavra += "Viajem de ida e volta pra Praia Grande"
+        }else if (eco < 4000) {
+            palavra += "Uma boa moto usada"
+        }else {
+            palavra += "Mais alguma bobagem legal"
+        }
+        zeca.innerHTML = palavra
+    }
+
+</script>
