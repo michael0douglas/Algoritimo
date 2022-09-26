@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>login</h1>
+    <b>Login</b> <br> <input type="text" placeholder="login" id="in_login"> <br>
+    <b>senha</b> <br> <input type="password" placeholder="****" id="in_senha"> <br>
+    <b>Codigo de segurança</b> <br> <input type="text" placeholder="é como se fosse uma segunda senha, só isso" id="in_cod">
+    <button onclick="zeca()"> entrar</button>
+
+</body>
+</html>
+<script>
+    var login = ""
+    var senha = ""
+    var cod = ""
+    function zeca () {
+login = (in_login.value)
+senha = (in_senha.value)
+cod = (in_cod.value)
+if (login == "SPTech" && senha == "digital" && cod == 123 ) {
+    alert("Usuário autenticado com sucesso")
+} else {
+    alert("Falha na autenticação")
+}
+    }
+</script>

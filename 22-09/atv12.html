@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>qual o altura inicial</p> <br>
+    <input type="number" placeholder="ATH" id="in_altura"> <br>
+    <p>qual o altura final</p> <br>
+    <input type="number" placeholder="ATH" id="in_altura1"> <br>
+    <P> Seu nome</P>  <br> <input type="text" name="" id="in_nome"> <br>
+     <p> sua altura</p> <br> <input type="number" name="" id="in_alt"> <br>
+     <button onclick="zeca()">cadastrar</button>
+     <div id="zekas"></div>
+
+</body>
+</html>
+<script>
+    var alt = 0
+   var alt0 = 0
+   var alt1 = 0
+   var nome = ""
+    function zeca () {
+        alt = Number (in_altura.value)
+alt0 = Number(in_altura1.value)
+alt1 = Number(in_alt.value)
+nome = (in_nome.value)
+intervalo = alt0 - alt
+if (alt >= 1 && alt0 <= alt){
+    alert ("Altura não atingida")
+} else if (alt1.toFixed(2) >= intervalo ){
+    zekas.innerHTML = (`O candidato ${nome} com altura de ${alt1} participará do processo de seleção de piloto`) 
+} else {
+    zekas.innerHTML = (`Infelizmente o candidato ${nome} com altura de ${alt1} não atende os requisitos`) 
+}
+
+    }
+</script>

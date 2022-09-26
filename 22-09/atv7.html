@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>otopia da netflix</h1>
+    <p>em qual hora você mais assiste?</p>
+    <input type="number" name="" id="in_hora"> <br>
+    <button onclick="zeca()">ver recomendação</button> <br>
+    <div id="zekas"></div>
+</body>
+</html>
+<script>
+    var hora = 0
+    function zeca () {
+hora = Number (in_hora.value)
+if (hora >= 19 && hora <= 21){
+    zekas.innerHTML = (`Não é recomendável que você assista sua série favorita no horário ${hora.toFixed(2)}!`)
+} else {
+    zekas.innerHTML = (`O horário ${hora.toFixed(2)} é adequado para assistir sua série favorita!`)
+}
+    }
+</script>

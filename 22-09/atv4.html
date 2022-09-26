@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>bolsa misera</h1>
+    <b>qual sua renda?</b>
+    <input type="number" placeholder="123" id="in_renda"> <br>
+    <b>qual a renda total da familia?</b>
+    <input type="number" placeholder="123+123" id="in_familia"> <br>
+    <button onclick="zeca()">verificar ajuda</button>
+
+</body>
+</html>
+<script>
+    var renda = 0
+    var familia = 0
+function zeca () {
+renda = Number (in_renda.value)
+familia = Number (in_familia.value)
+if (renda >= 1050 && familia >= 2100){
+    alert ("voce nao terá direito")
+}else {
+    alert ("voce terá direito a bolsa")
+}
+}
+
+</script>

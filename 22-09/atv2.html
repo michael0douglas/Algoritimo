@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TA SAINDO DA JAULA O MONSTRO</h1>
+  <p>qual proteina</p>  <select name="" id="sl_proteina" onchange="zeca()">proteina 
+<option value="nv">ovo</option>
+<option value="v">soja</option>
+<option value="nv">carne</option>
+    </select><br>
+    <select name="" id="sl_sobremesa" onchange="zeca()">
+        <option value="nv">pudim</option>
+        <option value="v">pitit gateu</option>
+        <option value="v">brigadeiro de soja</option>
+    </select>
+</body>
+</html>
+<script>
+function zeca () {
+if (sl_proteina.value == "v" && sl_sobremesa.value == "v"){
+    alert ("voce poderia ser vegano")
+} else {
+    alert ("voce NAO poderia ser vegano")
+}
+
+}
+
+</script>

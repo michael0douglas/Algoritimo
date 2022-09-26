@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>tempo</h2>
+    <b>temperatura atual?</b> 
+    <input type="number" placeholder="temperatura em C°" id="in_temperatura"> <br>
+    <button onclick="zeca()"> ver situação</button>
+
+</body>
+</html>
+<script>
+    var temperatura = 0
+    function zeca (){
+        temperatura = Number (in_temperatura.value)
+        if (temperatura >= 21 && temperatura <= 24 ){
+            alert ("temperatura confortavel")
+        } else {
+            alert ("Temperatura DESCONFORTÁVEL ")
+        }
+    }
+</script>

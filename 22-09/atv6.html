@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>poder ao veganismo</h1>
+    <b>café da manhã</b> <select name="" id="sl_cafe">
+        <option value="nv">Ovos</option>
+        <option value="nv">Bacons</option>
+        <option value="v">Leite de arroz</option>
+        </select>
+        <br>
+
+        <b>Almoço</b> <select id="sl_almoco">
+            <option value="nv">Bife</option>
+            <option value="v">Hamburguer de soja</option>
+            <option value="nv">Frango grelhado</option>
+            </select>
+            <br>
+
+            <b>Janta</b> <select id="sl_janta">
+                <option value="v">picanha de soja</option>
+                <option value="nv">Cupim</option>
+                <option value="nv">Coração</option>
+            </select>
+        _
+    <button onclick="zeca()">Sou vegano!!</button>
+</body>
+
+</html>
+<script>
+    var cafe = ""
+    var almoco = ""
+    var janta = ""
+    function zeca () {
+cafe = sl_cafe.value
+almoco = sl_almoco.value
+janta = sl_janta.value
+if (cafe == "v" && almoco == "v" && janta == "v"){
+alert  ("Sim, você é vegano")
+    } else {
+        alert ("Não, você não é vegano")
+    }
+}
+</script>

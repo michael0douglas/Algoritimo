@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>Processo seletivo</h2>
+
+    <div style="display: flex; gap: 100px;">
+        <div style="border: 1px solid black; padding: 20px; height: 400px;">
+            <div>
+                <h4>Altura média piloto</h4>
+                Informe a altura inicial: <br>
+                <input type="text" id="input_piloto_inicial">
+                <br><br>
+                Informe a altura final: <br>
+                <input type="text" id="input_piloto_final">
+            </div>
+            <br>
+            <div>
+                <h4>Altura média jogador de basquete</h4>
+                Informe a altura inicial: <br>
+                <input type="text" id="input_jogador_inicial">
+                <br><br>
+                Informe a altura final: <br>
+                <input type="text" id="input_jogador_final">
+            </div>
+            <br>
+            <button onclick="selecionar()">Selecionar</button>
+        </div>
+        
+        <div style="padding: 30px; border: 1px solid black; height: 400px;">
+            <h2>Sobre você</h2>
+            
+            Escreva seu nome: <br>
+            <input type="text" id="input_nome">
+
+            <br><br>
+            Escreva sua altura: <br>
+            <input type="text" id="input_altura">
+
+            <br><br>
+            Escolha sua modalidade: <br>
+            <select id="sel_modalidade">
+                <option value="" selected disabled>-- Escolha uma modalidade --</option>
+                <option value="j">Jogadaor de basquete</option>
+                <option value="p">Piloto</option>
+            </select>
+
+            <br><br>
+            <button onclick="selecionar_pessoa()">Se cadastrar</button>
+            
+            
+            
+        </div>
+        <div id="div_mensagem" style="padding: 10px; border: 1px solid black ;"></div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    var jogador_inicial = 0
+    var jogador_final = 0
+    var piloto_inicial = 0
+    var piloto_final = 0
+
+    div_mensagem.innerHTML = `
+    <h2>“Processo de Seleção de novos atletas"</h2> <br>
+        <li><b>Critério de Seleção de piloto – altura entre ${piloto_inicial} até ${piloto_final}</b> <br>
+        <li><b>Critério de Seleção de jogador de basquete – altura entre ${jogador_inicial} até ${jogador_final}</b>`
+
+    function selecionar(){
+
+
+        jogador_inicial = Number(input_piloto_inicial.value)
+        jogador_final = Number(input_piloto_final.value)
+
+
+        piloto_inicial = Number(input_jogador_inicial.value)
+        piloto_final = Number(input_jogador_final.value)
+
+        if(jogador_inicial > 1 && jogador_final >jogador_inicial && piloto_inicial > 1.5 && piloto_final > piloto_inicial){
+            
+            mensagem_criterio()  
+        }
+        else {
+            alert("Erro na altura")
+        }
+        
+    }
+
+
+    var nome = ""
+    var altura_pessoa = 0
+    var modalidade = ""
+    
+    var mensagem = ""
+
+    function selecionar_pessoa(){
+
+        nome = input_nome.value
+        altura_pessoa = Number(input_altura.value)
+        modalidade = sel_modalidade.value
+
+        if(modalidade == "j"){
+            if(altura_pessoa >= jogador_inicial && altura_pessoa <= jogador_final){
+                mensagem = `O candidato ${nome} com altura de ${altura_pessoa} participará do processo de seleção de jogador`
+            }
+            else{
+                mensagem = `Infelizmente o candidato ${nome} com altura de ${altura_pessoa} não atende os requisitos para ser jogador`
+            }
+        }
+        if(modalidade == "p"){
+            if(altura_pessoa >= piloto_inicial && altura_pessoa <= piloto_final){
+                mensagem = `O candidato ${nome} com altura de ${altura_pessoa} participará do processo de seleção de piloto`
+            }
+            else{
+                mensagem = `Infelizmente o candidato ${nome} com altura de ${altura_pessoa} não atende os requisitos para ser piloto`
+            }
+        }
+
+        mensagem_pessoa()
+    }
+    
+    
+    function mensagem_pessoa(){
+
+        div_mensagem.innerHTML += `<br>${mensagem}`
+    }
+
+    function mensagem_criterio(){
+        div_mensagem.innerHTML = `
+        <h2>“Processo de Seleção de novos atletas"</h2> <br>
+            <li><b>Critério de Seleção de piloto – altura entre ${piloto_inicial} até ${piloto_final}</b> <br>
+            <li><b>Critério de Seleção de jogador de basquete – altura entre ${jogador_inicial} até ${jogador_final}</b>
+        <br>
+        
+        <h3>Lista de candidatos</h3>`
+
+    }
+
+</script>

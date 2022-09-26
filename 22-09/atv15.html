@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Você pode casar com minha filha?</h2>
+
+    Escreva seu tempo de trabalho(em Anos): <br>
+    <input type="text" id="input_anos" placeholder="Em anos">
+
+    <br><br>
+    Escreva a quantidade de trigo(em kilos) por hectar da sua plantação: <br>
+    <input type="text" id="input_trigo" placeholder="Em kilos">
+
+    <br><br>
+    Quais as suas quantidades de falta? <br>
+    <input type="text" id="input_falta" placeholder="Faltas">
+
+    <br><br>
+    <button onclick="match()">Deu match?</button>
+
+    <br><br>
+
+    <center>
+        
+        <div id="div_mensagem"></div> <br>
+        <img id="img_filha" style="width: 200px">
+    </center>
+</body>
+</html>
+
+<script>
+
+    function match(){
+        var anos = Number(input_anos.value)
+        var trigo = Number(input_trigo.value)
+        var falta = Number(input_falta.value)
+
+
+        if(anos >= 5 && trigo >=300 && falta <= 5){
+            div_mensagem.innerHTML = "Minha filha será sua!"
+
+            img_filha.src = "https://i.pinimg.com/736x/8d/08/9a/8d089a012da70f41a9f237c753fdc729.jpg"
+        }
+        else{
+            div_mensagem.innerHTML = "Deu ruim! Trabalhe mais 2 anos"
+
+            img_filha.src = "https://thumbs.dreamstime.com/b/retrato-de-um-homem-bravo-com-as-m%C3%A3os-no-ar-grito-boca-aberta-zangado-gritando-fundo-branco-isolado-sentimentos-express%C3%A3o-facial-195178073.jpg"
+        }
+    }
+</script>
