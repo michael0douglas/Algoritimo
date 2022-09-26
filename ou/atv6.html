@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Números cabalísticos</h2>
+
+    Você já clicou <span id="span_clique">0</span> vezes
+
+    <br><br>
+    <button onclick="clique()">Clique cabalístico</button>
+</body>
+</html>
+
+<script>
+    var cliques = 0
+
+    function clique(){
+        cliques += 1
+
+        span_clique.innerHTML = cliques
+
+        if(cliques == 3 || cliques == 4 || cliques == 7 || cliques == 10){
+            alert(`Você clicou ${cliques} vezes e Juliana gosta desse número!`)
+        }
+    }
+
+</script>

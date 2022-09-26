@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Avaliar possibilidade de pagamento</h2>
+
+    Selecione sua forma de pagamento: <br>
+    <select id="sel_pagamento">
+        <option value="" selected disabled>-- Selecione uma forma de pagamento --</option>
+        <option value="v">Dinheiro</option>
+        <option value="v">Cartão de débito</option>
+        <option value="p">Cartão de crédito</option>
+        <option value="p">Boleto</option>
+    </select>
+    <br><br>
+
+    <button onclick="analisar_compra()">Analisar compra</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar_compra(){
+        var pagamento = sel_pagamento.value
+
+        var mensagem = ""
+        if(pagamento == "v"){
+
+            mensagem =  "Você terá que pagar a vista"
+        }
+        else {
+            mensagem =  "Pagamento poderá ser parcelado"
+        }
+
+        div_mensagem.innerHTML = mensagem
+    }
+</script>

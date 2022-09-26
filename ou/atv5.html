@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>Analisador de temperatura</h2>
+
+    -- Temperatura ideal entre 21ºC e 24ºC
+
+    <br><br><br>
+    Qual é a temperatura atual? <br>
+    <input type="text" id="input_temperatura">
+
+    <br><br>
+    <button onclick="analisar_temperatura()">Analisar temperatura</button>
+
+
+
+
+</body>
+</html>
+
+<script>
+
+    function analisar_temperatura(){
+        var temperatura = input_temperatura.value
+
+        var mensagem = ""
+        if(!temperatura > 21 || !temperatura < 24){
+            alert("Alerta de desconforto!")
+
+            if(temperatura < 21){
+                mensagem =  "As pessoas vão ter hipotermia"
+            }
+            else if(temperatura > 24){
+                mensagem =  "As pessoas vão derreter"
+            }
+            alert(mensagem)
+        }
+
+    }
+</script>
