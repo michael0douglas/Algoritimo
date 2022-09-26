@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    <p>Qual o nome do cliente: <input type="text" id="in_nome"></p>
+    <p>Qual o seu saldo: <input type="text" id="in_saldo"></p>
+    <button onclick="verificar()">Verificar saldo</button>
+    <div id="div_conta"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var nome = in_nome.value
+        var saldo = Number(in_saldo.value)
+        var frase = ""
+        if(saldo < 0){
+            frase = `Com o saldo de ${(saldo).toFixed(2)} o cliente ${nome} está com saldo devedor`
+        }else if(saldo <= 2000){
+            frase = `Com o saldo de ${(saldo).toFixed(2)} o cliente ${nome} está com saldo NORMAL`
+        }else if(saldo <= 5000){
+            frase = `Com o saldo de ${(saldo).toFixed(2)} o cliente ${nome} está com saldo ACIMA DA MÉDIA`
+        }else {
+            frase = `Com o saldo de ${(saldo).toFixed(2)} o cliente ${nome} TEM PERFIL DE INVESTIDOR`
+        }
+
+        div_conta.innerHTML = frase
+    }
+</script>

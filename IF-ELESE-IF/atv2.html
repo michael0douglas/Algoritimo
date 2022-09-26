@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TUCAVLO MEME DO VALO CAVALO</h1>
+    <p>rende familiar p/capita por familia</p> <input type="number" name="" id="ipt_renda"> <br>
+    <button onclick="analisar()">analisar renda</button> <br>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+function analisar () {
+var renda = Number (ipt_renda.value)
+var pala = 'classe'
+if (renda < 250 ){
+pala += 'E'
+} 
+else if (renda <= 900) {
+    pala += 'D'
+}
+else if (renda <= 2500) {
+    pala += 'C'
+} 
+else if (renda <= 9500) {
+    pala += 'B'
+} 
+else {
+    pala += 'A'
+}
+zeca.innerHTML = pala
+}
+</script>

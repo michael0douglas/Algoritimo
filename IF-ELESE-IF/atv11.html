@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <h2>Meses do ano</h2>
+    <select name="" id="sel_mes" onchange="estacao()">
+        <option value="0">Echolha um mês</option>
+        <option value="2">Janeiro</option>
+        <option value="3">Fevereiro</option>
+        <option value="4">Março</option>
+        <option value="5">Abril</option>
+        <option value="6">Maio</option>
+        <option value="7">Junho</option>
+        <option value="8">Julho</option>
+        <option value="9">Agosto</option>
+        <option value="10">Setembro</option>
+        <option value="11">Outubro</option>
+        <option value="12">Novembro</option>
+        <option value="1">Dezenbro</option>
+    </select><br>
+
+    <div id="div_estacao"></div>
+    <img src="" alt="" id="id_img" width="600px">
+
+</body>
+</html>
+<script>
+    function estacao(){
+        var mes = sel_mes.value
+        var img_estacao = ""
+        var frase = ""
+
+        if(mes == 0){
+            frase = ""
+            img_estacao = ""
+        }else if(mes < 4){
+            frase = "Verão"
+            img_estacao = "./img/verao.jpg"
+        }else if(mes < 7){
+            frase = "Outono"
+            img_estacao = "./img/outono.jpg"
+        }else if(mes < 10){
+            frase = "Inverno"
+            img_estacao = "./img/inverno.jpg"
+        }else{
+            frase = "Primavera"
+            img_estacao = "./img/primavera.jpg"
+        }
+        div_estacao.innerHTML = frase
+        id_img.src = img_estacao
+    }
+</script>
