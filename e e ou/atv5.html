@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>pokemon</h1>
+    <p>------------iniciante</p>
+    <select name="" id="iniciante"> <br>
+        <option value="">----</option>
+        <option value="planta">PLANTA</option>
+        <option value="agua">AGUA</option>
+        <option value="fogo">FOGO</option>
+    </select> <br>
+
+    <button style="height: 150px; background-color: brown;" onclick="batlle()">BATALHAR!!</button>
+
+    <p>---------oponente</p>
+    <select name="" id="oponente"> <br>
+        <option value="">----</option>
+        <option value="planta">PLANTA</option>
+        <option value="agua">AGUA</option>
+        <option value="fogo">FOGO</option>
+    </select>
+
+
+    <div id="zeca">Vitórias do Iniciante: 0 / Derrotas do Iniciante: 0 / Empates: 0</div>
+</body>
+
+</html>
+<script>
+    function batlle() {
+        var ini = (iniciante.value)
+        var opo = (oponente.value)
+        var v = Number(0)
+        var d = Number(0)
+        var e = Number(0) 
+        
+        var mensagem = ""
+        if (ini == "agua" && opo == "agua" || ini == "planta" && opo == "planta" || ini == "fogo" && opo == "fogo") {
+            mensagem += "A batalha empatou!<br>"
+            e = 1
+        } if ((ini == "planta" && opo == "agua" || ini == "agua" && opo == "fogo" || ini == "fogo" && opo == "planta")) {
+            mensagem += "O iniciante venceu!<br>"
+            v = 1
+        } else {
+            mensagem += "O iniciante perdeu!<br>"
+            d = 1
+        } mensagem += `<br> - Iniciante = ${ini} <br> - Oponente = ${opo} <br> - mensagem = ${Mensagem = "O iniciante venceu"}  <br> - Contagem = “Vitórias do Iniciante: ${v} / Derrotas do Iniciante: ${d} / Empates: ${e}`
+        zeca.innerHTML = mensagem
+    }
+</script>

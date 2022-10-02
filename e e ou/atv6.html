@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>descostos</h1>
+    nome do produto <br>
+    <input type="text" placeholder="ireineu" id="in_prod"> <br>
+
+    preço do produto <br>
+    <input type="number" placeholder="$00,00" id="in_valor"> <br>
+
+    insira o cupom <br>
+    <input type="text" placeholder="cafuso10" id="in_cu"> <br>
+
+    <button onclick="aplicar()">aplicar descostos</button>
+        <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function aplicar () {
+        var pro = (in_prod.value)
+        var valor = Number (in_valor.value)
+        var cu = (in_cu.value)
+        var mensagem = ""
+        if (pro == ""){
+            alert ("Insira um produto para prosseguir!")
+        } if (valor == ""){
+            alert ("Insira um preço para prosseguir!")
+        } if (cu == ""){
+            alert ("Insira um cupom para prosseguir!")
+        } else if (pro == "tenis" || pro == "livros" || pro == "material escolar" && cu == "GERAL_10" ){
+            mensagem = `Cupom para produtos em geral aplicado! Preço final será R$${valor.toFixed(2) - valor.toFixed(2) * 0.1}`
+        } else if (pro == "celular" || pro == "notebook" || pro == "tablet" && cu == "TECH_19" ){
+            mensagem = `Cupom para produtos tecnológicos foi aplicado! Preço final será R$${valor.toFixed(2) - valor.toFixed(2) * 0.19}`
+        } else {
+            mensagem = "Cupom não aplicado! Preencha os campos e tente novamente!"
+        }
+        zeca.innerHTML = mensagem
+    }
+</script>

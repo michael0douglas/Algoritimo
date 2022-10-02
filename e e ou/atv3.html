@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>pobre gorge</h1>
+    <b><i>Qual marca de tv quer comprar?</i></b>  <br>
+
+    <select name="" id="sl_tv"> <br>
+        <option value="+--MARCAS--+"></option>
+        <option value="s">Samsung</option>
+        <option value="l">LG</option>
+        <option value="m">mundial</option>
+        <option value="b">britânia</option>
+    </select>
+    
+<p>qual o valor da tv?</p>
+<input type="number" placeholder="$00,00" id="in_valor"> <br>
+<button onclick="analisar()" style="background-color: red;">analisar compra</button>
+<div id="zeca"></div>
+</body>
+</html>
+<script>
+    function analisar () {
+        var tv = (sl_tv.value)
+        var valor = (in_valor.value)
+        var mensagem = ""
+        if (valor <= 800 || valor >= 2000){
+            mensagem += "<br>TV fora da faixa de preço"
+        }  if (valor <= 800){
+            mensagem += "<br>Preço baixo demais!"
+        } if (valor >= 2000) {
+            mensagem += "<br>TV cara demais, infelizmente :c"
+        }
+        
+         else if (valor >= 800 && valor <= 2000 && tv == "m" || tv == "b"){
+            mensagem = "Na faixa de preço, porém marca não confiável"
+        } else if (valor >= 800 && valor <= 2000 && tv == "l" || tv == "s"){
+            mensagem = "Essa TV pode entrar na sua lista!"
+        }
+        zeca.innerHTML = mensagem
+    }
+</script>

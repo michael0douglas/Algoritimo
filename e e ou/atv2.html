@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <i>login</i> <br>
+    <input type="text" placeholder="login" id="in_login"> <br>
+    <i>senha</i> <br>
+    <input type="text" placeholder="********" id="in_senha"> <br>
+    <b><i>codigo de segurança</i></b> <br>
+    <input type="text" placeholder="homem-aranha" id="in_cod"> <br>
+    <button style="background-color: green;" onclick="zeca()">ENTRAR</button> <br>
+    <div id="zecas"></div>
+
+</body>
+</html>
+<script>
+    function zeca () {
+        var login = (in_login.value)
+        var senha = (in_senha.value)
+        var cod = (in_cod.value)
+        var mensagem = ""
+        if (login == "SPTECH" && senha == "SCHOOL" || cod == "595"){
+            mensagem = "Usuário autenticado com sucesso"
+        } else {
+            mensagem = "Falha na autenticação"
+        }
+        zecas.innerHTML = mensagem
+    }
+
+</script>

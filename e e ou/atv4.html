@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a>nota do aluno</a> <br>
+    <input type="number" placeholder="10.00" id="in_nota">  <br>
+    <a>frequencia do aluno</a> <br>
+    <input type="number" placeholder="50%" id="in_freq"> <br>
+    <button style="width: 100px; background-color: green;" onclick="analisar()" >analisar aluno</button>
+<div id="zeca"></div>
+</body>
+</html>
+<script>
+    function analisar () {
+        var nota = Number (in_nota.value)
+        var freq = Number (in_freq.value)
+        var mensagem = ""
+        if (nota <= 0 && nota >= 10){
+            alert ("Onde já se viu nota <0 ou >10?!")
+                mensagem = ""
+        } if (freq < 0 && freq >= 100){
+            alert ("Onde já se viu frequência <0 ou >100?!")
+                mensagem = ""
+        } else if (nota >= 0 && nota < 6){
+            mensagem += "<br>Aluno ficou abaixo da média"
+        } else if (nota >= 6 && nota < 8){
+            mensagem += "<br>Aluno ficou da média"
+        } else if (nota >= 8 && nota <= 10){
+            mensagem += "<br>Aluno acima da média"
+        } if (freq >= 75){
+            mensagem += "<br>Aluno aprovado por frequência"
+        } else {
+            mensagem += '<br>Aluno reprovado por frequência'
+        }
+        zeca.innerHTML = mensagem
+    }
+</script>

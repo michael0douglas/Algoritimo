@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <b><i>qual seu tipo de arroz?</i></b> <br>
+    <select name="" id="sl_combo">
+        <option value="int">integral</option>
+        <option value="bra">branco</option>
+    </select> <br>
+    <i>qual o tempo de conzimento? (min)</i> <br>
+    <input type="number" placeholder="20min" id="in_tempo"> <br>
+    <i>qual a quantidade de sal usado?(g)</i> <br>
+    <input type="number" placeholder="200gr" id="in_sal"> <br>
+    <button onclick="ava()">avaliar arroz</button> <br>
+    <div id="zeca" ></div>
+<img style="width: 400px;" id="arroz">
+    
+</body>
+
+</html>
+<script>
+    function ava () {
+        var combo = (sl_combo)
+        var conzi = Number (in_tempo)
+        var sal = Number (in_sal) 
+        mensagem = ""
+        if (combo == "int" && conzi == 20 && sal <= 15 || combo == "bra" && conzi == 10 && sal <= 10) {
+            mensagem = "seu arroz está perfeito <br>"
+        } if (combo == "int"){
+            arroz.src ="arroz.jpg" 
+        } if (combo == "bra"){
+            arroz.src = "arroz.jpg" 
+        } 
+        else {
+            mensagem = "seu arroz não está perfeito"
+            arroz.src = "jacan.jpg"
+        }
+        zeca.innerHTML = mensagem
+
+         
+    }
+</script>
