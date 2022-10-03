@@ -34,23 +34,24 @@
 
 </html>
 <script>
+    var v = Number(0)
+        var d = Number(0)
+        var e = Number(0) 
     function batlle() {
         var ini = (iniciante.value)
         var opo = (oponente.value)
-        var v = Number(0)
-        var d = Number(0)
-        var e = Number(0) 
+        
         
         var mensagem = ""
         if (ini == "agua" && opo == "agua" || ini == "planta" && opo == "planta" || ini == "fogo" && opo == "fogo") {
             mensagem += "A batalha empatou!<br>"
-            e = 1
+            e++
         } if ((ini == "planta" && opo == "agua" || ini == "agua" && opo == "fogo" || ini == "fogo" && opo == "planta")) {
             mensagem += "O iniciante venceu!<br>"
-            v = 1
+            v++
         } else {
             mensagem += "O iniciante perdeu!<br>"
-            d = 1
+            d++
         } mensagem += `<br> - Iniciante = ${ini} <br> - Oponente = ${opo} <br> - mensagem = ${Mensagem = "O iniciante venceu"}  <br> - Contagem = “Vitórias do Iniciante: ${v} / Derrotas do Iniciante: ${d} / Empates: ${e}`
         zeca.innerHTML = mensagem
     }
