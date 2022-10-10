@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="qualquer numero" id="in_num"> <br>
+    <input type="text" placeholder="uma frase" id="in_frase"> <br>
+    <button onclick="papa()">papagaio</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function papa () {
+        var num = Number (in_num.value)
+        var frase =  (in_frase.value)
+        var conta = 0
+        while (conta < num){
+            alert (`${frase}`)
+            conta ++
+        }
+    }
+</script>

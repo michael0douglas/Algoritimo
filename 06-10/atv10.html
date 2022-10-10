@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="numeros crescentes" id="in_num">
+    <button onclick="pares()">S2 pares</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function pares () {
+        var num = Number (in_num.value)
+        var conta = 0
+        while (conta <= num){
+            if (conta %2 == 0){
+                zeca.innerHTML += `${conta} <br>`
+            }conta ++
+              
+        }
+        
+    
+
+    }
+</script>

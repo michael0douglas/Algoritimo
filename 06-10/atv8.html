@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>numeros</h1>
+    <input type="number" placeholder="numeros > 0 && < 200" id="in_num">
+    <button onclick="sete()">viva o 7!!</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function sete () {
+        var num = Number (in_num.value)
+        var conta = 0
+        if (num >= 0 && num <= 200){
+        while (conta < num){
+            if (conta %7 == 0){
+                zeca.innerHTML += `<br> ${conta}`
+            }
+                conta ++
+        }
+        }
+    
+    }
+</script>

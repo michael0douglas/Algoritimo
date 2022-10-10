@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos dias voce faz mosculçao? 
+    <br>
+    <input type="number" placeholder="musculaçao" id="in_musculo"> <br>
+    <button onclick="exibir ()"> Exibir rotina mensal</button> <br>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function exibir () {
+        var muscu = Number (in_musculo.value)
+        var conta = 0
+       
+        while ( conta < 30){
+            if ((conta % muscu) == 0){
+            zeca.innerHTML += `<br>dia ${conta +1} - musculação `
+            } else {
+                zeca.innerHTML += `<br>dia ${conta+1} - Comer, dormir etc  `
+            }conta ++
+        }
+    }
+</script>

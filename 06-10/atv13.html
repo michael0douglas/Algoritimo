@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual tabuada deseja ver? <br>
+    <select name="" id="sl_tabu" > <br>
+        <option value="">--selecione um--</option>
+        <option value="2">Tabuada do 2</option>
+        <option value="3">Tabuada do 3</option>
+        <option value="4">Tabuada do 4</option>
+        <option value="5">Tabuada do 5</option>
+        <option value="6">Tabuada do 6</option>
+        <option value="7">Tabuada do 7</option>
+        <option value="8">Tabuada do 8</option>
+        <option value="9">Tabuada do 9</option>
+    </select>
+     <button onclick="ver()">ver tabuada</button> <br>
+
+    <div id="zeca"></div>
+
+
+<!-- <style color: blue;></style> -->
+</body>
+</html>
+<script>
+    function ver () {
+        var tabuada = Number (sl_tabu.value)
+        var conta = 0
+        var cor = ""
+        
+        while (conta <= 12){
+            if(conta %2 == 0){
+            var resultado = tabuada * conta
+            cor = "blue"
+            zeca.innerHTML += `<br><span style="color:${cor} ;"> ${tabuada} X ${conta} = ${resultado} </span>`
+            
+    } else {
+        var resultado = tabuada * conta
+        cor = "red"
+            zeca.innerHTML += `<br><span style="color:${cor} ;"> ${tabuada} X ${conta} = ${resultado} </span>`
+    }
+                conta++
+               
+                
+        }
+
+
+    }
+
+</script>
+

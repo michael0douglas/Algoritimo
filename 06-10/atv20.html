@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    Quantos ônibus você precisa pegar? <br>
+    <input type="text" id="input_onibus">
+
+    <br><br>
+
+    Quantos trens você precisa pegar? <br>
+    <input type="text" id="input_trens">
+
+    <br><br>
+    Quantos metrôs você precisa pegar? <br>
+    <input type="text" id="input_metros">
+
+    <br><br>
+
+    <button onclick="trajeto()">#Partiu Trajeto</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+
+
+<script>
+
+    function trajeto(){
+
+        div_mensagem.innerHTML = ''
+        
+        var onibus = Number(input_onibus.value)        
+        var trens = Number(input_trens.value)
+        var metros = Number(input_metros.value)
+
+        var i = 0
+
+        while(i < onibus){
+            var cor = "red"
+            i++
+            div_mensagem.innerHTML += `<br><span style="color: ${cor} ;">Pegando o ${i}º buzão</span>`
+
+            if(i == 2){
+                div_mensagem.innerHTML += `<span style="color: ${cor} ;"> (Começando a cansar)`
+            }
+            else if(i > 2){
+                div_mensagem.innerHTML += `<span style="color: ${cor} ;"> (Já cansado)</span>`
+            }
+
+
+        }
+
+        i = 0
+
+        while(i < trens){
+            var cor = "green"
+            i++
+            div_mensagem.innerHTML += `<br><span style="color: ${cor} ;">Pegando o ${i}º trem</span>`
+
+            if(i == 2){
+                div_mensagem.innerHTML += `<span style="color: ${cor} ;"> (Começando a cansar)`
+            }
+            else if(i > 2){
+                div_mensagem.innerHTML += `<span style="color: ${cor} ;"> (Já cansado)</span>`
+            }
+        }
+
+        i = 0
+
+        while(i < metros){
+            var cor = "blue"
+            i++
+            div_mensagem.innerHTML += `<br><span style="color: ${cor} ;">Pegando o ${i}º metrô</span>`
+
+            if(i == 2){
+                div_mensagem.innerHTML += `<span style="color: ${cor} ;"> (Começando a cansar)`
+            }
+            else if(i > 2){
+                div_mensagem.innerHTML += `<span style="color: ${cor} ;"> (Já cansado)</span>`
+            }
+        }
+    }
+</script>

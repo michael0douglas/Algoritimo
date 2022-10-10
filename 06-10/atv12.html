@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantas voltas o carro dará na corrda? <br>
+    <input type="number" placeholder="" id="in_voltas"> <br>
+    <button onclick="play()">iniciar corrida</button> <br>
+    <div id="zeca"></div>
+
+</body>
+</html>
+<script>
+    function play () {
+        var volta = Number (in_voltas.value)
+        var conta = 1
+        
+        while (conta <= volta){
+            zeca.innerHTML += `<br>carro dando a ${conta}° volta`
+        
+            conta++
+        } 
+        zeca.innerHTML += `<br> Corrida finalizada!`
+    }
+</script>

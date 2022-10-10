@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos titulos mundiais seu time tem? <br>
+    <input type="number" placeholder="títulos" id="in_titu"> <br>
+    <button onclick="ver()">ver trofeus</button> <br>
+ <center>
+    <div id="zeca"></div>
+    <img id="img_trofe" style="width: 100px">
+</center>
+</body>
+</html>
+<script>
+    function ver () {
+        var titu = Number (in_titu.value)
+        var conta = 0 
+        if (titu <= 0){
+            img_trofe.src = " <br> https://placar.abril.com.br/wp-content/uploads/2021/09/brasil-e-alemanha-bernard-mineirao-finais-64-original3.jpeg"
+        } else while (titu > conta) {
+            img_trofe.src += " <br> tofeu.png"
+            conta ++
+        }
+    }
+
+</script>
+
+<!-- https://br.kogstatic.com/gen_images/cc/2b/cc2bc5910ddf4cb9b31432f8d5c87b02.png -->
+
+<!-- 
+https://placar.abril.com.br/wp-content/uploads/2021/09/brasil-e-alemanha-bernard-mineirao-finais-64-original3.jpeg -->
