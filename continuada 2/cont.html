@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Clones do Naruto</h2>
+
+    <br>
+    Insira sua quantidade de pontos totais: <br>
+    <input type="text" id="input_pontos">
+    <br><br>
+
+    Quantos clones você deseja fazer? <br>
+    <input type="text" id="input_clones">
+
+    <br><br>
+    Quantos clones por linha você deseja fazer? <br>
+    <input type="text" id="input_clones_linha">
+
+    <br><br>
+    <button onclick="criar_clone()">Criar Clone</button>
+
+
+    <br><br>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function criar_clone(){
+
+        div_mensagem.innerHTML = ""
+
+        var pontos = Number(input_pontos.value)
+        var clones = Number(input_clones.value)
+        var clones_linha = Number(input_clones_linha.value)
+
+        var validar_pontos = pontos > 20 && pontos < 5000
+
+        var validar_clones = clones > 0  && clones < 250 
+
+        var validar_clones_linha = clones_linha > 0
+
+        if(validar_pontos && validar_clones && validar_clones_linha){
+
+            var qnt_energia_clone = clones * 20
+            var sobra_energia = pontos - qnt_energia_clone
+
+
+            if(pontos >= qnt_energia_clone){
+
+                var i_clones = clones
+
+                while(i_clones > 0){
+                    var i_linha = 0
+
+                    while(i_linha < clones_linha ){
+
+                        if(i_clones > 0){
+                            div_mensagem.innerHTML += `<img height="100px" src="https://preview.redd.it/tudjq02jost71.jpg?auto=webp&s=ed558eeba8ee7c136febe2cd0084d2ab3661b9eb">`
+                        }
+
+                        i_linha++
+                        i_clones--
+                    }
+
+                    div_mensagem.innerHTML += `<br>`
+
+                }
+
+                div_mensagem.innerHTML += `ANÁLISE DA GERAÇÃO DE CLONES
+                                        <br>Energia Inicial: ${pontos}  
+                                        <br>Qtde de Clones: ${clones}
+                                        <br>Sobra de Energia: ${sobra_energia}`
+
+
+
+                // PRIMEIRA VALIDAÇÃO - PROVAVELMENTE VAI GANAR
+                var qnt_clones_percentual_ganhou = clones > 50   && sobra_energia > (pontos * 0.2) 
+                var provavelmente_ganhe = sobra_energia > 1000 || qnt_clones_percentual_ganhou
+
+                // SEGUNDA VALIDAÇÃO - A LUTA VAI SER MUITO BOA
+                var qnt_clones_percentual_luta_boa = clones > 20 && clones < 50 && sobra_energia > (pontos * 0.1) 
+                var luta_boa = sobra_energia > 500 || qnt_clones_percentual_luta_boa
+
+
+                if(provavelmente_ganhe){
+                    div_mensagem.innerHTML += "PROVAVELMENTE VOCE VAI GANHAR"
+                }
+                else if(luta_boa){
+                    div_mensagem.innerHTML += "A LUTA VAI SER MUITO BOA"
+                }
+                else {
+                    div_mensagem.innerHTML += "TORÇA PARA O ADVERSÁRIO SER FRAQUINHO"
+                }
+
+            }
+            else{
+                alert("Você não pode criar os clones, PRECISA DE MAIS ENERGIA")
+            }
+        }
+        else{
+            alert("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0")
+        }
+
+
+
+
+
+
+    }
+</script>

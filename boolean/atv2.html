@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="altura" id="in_altura"> <br>
+    <button onclick="analisar()" > Analisar para esportes</button> <br>
+    <div id="zeca"></div>
+
+</body>
+</html>
+<script>
+       function analisar(){
+        var altura = Number(in_altura.value)
+
+        var menor = altura < 1.60
+        var maior = altura > 1.60 && altura < 1.85
+
+        var mensagem = ''
+        if(menor){
+            mensagem = `Pode tentar ser piloto(a) de corrida
+                        <br>Pode tentar ser velejador(a)`
+        }
+        if(maior){
+            mensagem = `Pode tentar ser jogador de futebol ou handbol`
+        }
+
+        zeca.innerHTML = mensagem
+    }
+</script>

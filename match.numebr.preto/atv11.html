@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>SIMULADOR DE PEDRA, PAPEL E TESOURA</h2>
+
+    <button onclick="jogar()">Jogar</button>
+
+    <br>
+    <img height="150px" id="img_jogador1">
+    <div id="div_versus" style="display: inline;"></div>
+    <img height="150px" id="img_jogador2">
+
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function jogar(){
+        var jogador1 = parseInt(Math.random() * 3)
+        var jogador2 = parseInt(Math.random() * 3)
+
+        var url_jogador1 = ""
+        var url_jogador2 = ""
+
+        // PEDRA
+        if(jogador1 == 0){
+            url_jogador1 = "https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg"
+        }
+        // PAPEL
+        if(jogador1 == 1){
+            url_jogador1 = "https://blog.kalunga.com.br/wp-content/uploads/2022/01/papel-sulfite-principal.jpeg"
+        }
+        // TESOURA
+        if(jogador1 == 2){
+            url_jogador1 = "https://7106.cdn.simplo7.net/static/7106/sku/acessorios-tesoura-grande-mundial-profissional-aco-inox-costura--p-1622655868602.png"
+        }
+
+        // PEDRA
+        if(jogador2 == 0){
+            url_jogador2 = "https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg"
+        }
+        // PAPEL
+        if(jogador2 == 1){
+            url_jogador2 = "https://blog.kalunga.com.br/wp-content/uploads/2022/01/papel-sulfite-principal.jpeg"
+        }
+        // TESOURA
+        if(jogador2 == 2){
+            url_jogador2 = "https://7106.cdn.simplo7.net/static/7106/sku/acessorios-tesoura-grande-mundial-profissional-aco-inox-costura--p-1622655868602.png"
+        }
+
+        img_jogador1.src = url_jogador1
+        img_jogador2.src = url_jogador2
+        div_versus.innerHTML = " <b>VS</b> "
+
+        var mensagem = ""
+        var jogador = ""
+        if(jogador1 == 0 && jogador2 == 2){
+            mensagem = "Pedra quebra a tesoura"
+            jogador = 1
+        }
+        if(jogador1 == 1 && jogador2 == 0){
+            mensagem = "Papel cobre a pedra"
+            jogador = 1
+        }
+        if(jogador1 == 2 && jogador2 == 1){
+            mensagem = "Tesoura corta o papel"
+            jogador = 1
+        }
+
+        if(jogador2 == 0 && jogador1 == 2){
+            mensagem = "Pedra quebra a tesoura"
+            jogador = 2
+        }
+        if(jogador2 == 1 && jogador1 == 0){
+            mensagem = "Papel cobre a pedra"
+            jogador = 2
+        }
+        if(jogador2 == 2 && jogador1 == 1){
+            mensagem = "Tesoura corta o papel"
+            jogador = 2
+        }
+
+        var mensagem_final = `Jogador ${jogador} venceu porque ${mensagem}`
+
+        if(jogador1 == jogador2){
+            mensagem_final = `EMPATE! Jogue novamente!`
+        }
+        div_mensagem.innerHTML = mensagem_final
+
+
+    }
+</script>

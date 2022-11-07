@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continuada-2</title>
+</head>
+
+<body>
+    <h1>vilha da folha</h1> <br>
+
+    <p>energia do naruto</p> <input type="number" placeholder="energia" id="in_energia"> <br>
+
+    <p>Quantos clones ira criar?</p> <input type="number" placeholder="Clone das sombras" id="in_clone"> <br>
+
+    <p>Quantos clones por linha?</p> <input type="number" placeholder="linha por clone" id="in_linha"> <br>
+
+    <button onclick="criar()">Criar clones!</button> <br>
+    <div id="div_mensagem"></div>
+    <img id="img_naruto" style="width: 150px" src="https://preview.redd.it/tudjq02jost71.jpg?auto=webp&s=ed558eeba8ee7c136febe2cd0084d2ab3661b9eb">
+    
+</body>
+</html>
+<script>
+    
+    function criar () {
+        div_mensagem.innerHTML = ``
+        var energia = Number (in_energia.value)
+        var clone = Number (in_clone.value)
+        var linha = Number (in_linha.value)     
+        var contador = 0   
+        var naruto = (img_naruto.value)
+        clone = clone * 20
+        // exibindo o alert
+        if (energia >= 20 && energia <= 5000){
+                    
+        } 
+        else{
+
+            alert ("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0")
+        }
+
+         if (clone >= 0 && clone <= 250){
+            
+        } 
+        else {
+            alert ("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0")
+        }
+         if (linha >= 0) {
+
+        } 
+        else  {
+            alert ("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0")
+        }
+
+
+        // validando os clones..
+        if (energia >= clone){
+             while (contador <= clone ) {
+                img_naruto.src += `<img src="https://preview.redd.it/tudjq02jost71.jpg?auto=webp&s=ed558eeba8ee7c136febe2cd0084d2ab3661b9eb">`
+                contador ++
+                div_mensagem.innerHTML = ` <h4>ANÁLISE DA GERAÇÃO DE CLONES</h4> <br>
+
+Energia Inicial: ${energia } <br> 
+
+Qtde de Clones: ${clone % 20+1} <br>
+
+Sobra de Energia: ${energia - clone} <br> `
+            }
+
+            
+        } else {
+            alert ("a sua energia não é forte suficente para criar essa quantidade de clones.")
+        }
+        // gerando os clones..
+        
+        // div_mensagem.innerHTML = ``
+        
+
+
+    }
+</script>

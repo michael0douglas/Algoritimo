@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite seu nome: 
+    <input type="text" id="in_nome">
+
+    <br><br>
+    Digite seu número da sorte: (1 até 10)
+    <input type="number" id="in_num_sorte1">
+
+    <br><br>
+    Digite seu número da sorte: (1 até 10)
+    <input type="number" id="in_num_sorte2">
+
+    <br><br>
+    Digite seu número da sorte: (1 até 10)
+    <input type="number" id="in_num_sorte3">
+
+
+    <br><br>
+    <button onclick="sortear()">Sortear</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+
+    function sortear(){
+        var num1 = Number(in_num_sorte1.value)
+        var num2 = Number(in_num_sorte2.value)
+        var num3 = Number(in_num_sorte3.value)
+
+        var nome = in_nome.value
+
+        var sorteio1 = 0
+        var sorteio2 = 0
+        var sorteio3 = 0
+
+        var validando_num = num1 >= 1 && num1 <= 10 && num2 >= 1 && num2 <= 10 && num3 >= 1 && num3 <= 10 
+        if(validando_num){
+
+            for(i = 0; i != num1;){
+                i = parseInt(1 + Math.random() * 10)
+                sorteio1++
+            }
+
+            for(i = 0; i != num2;){
+                i = parseInt(1 + Math.random() * 10)
+                sorteio2++
+            }
+
+            for(i = 0; i != num3;){
+                i = parseInt(1 + Math.random() * 10)
+                sorteio3++
+            }
+
+            div_mensagem.innerHTML = `Parabéns, ${nome} você foi sorteado(a) após ${sorteio1} sorteios!<br>
+                                        Seu segundo número foi sortado(a) após ${sorteio2}<br>
+                                        Seu terceiro número foi sortado(a) após ${sorteio3}`
+
+        }
+        else{
+            alert("Digite um número entre o intervalo de 1 a 10")
+        }
+    }
+
+</script>

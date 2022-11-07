@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas cocas vc ja consumiu em vida? <input type="number" placeholder="Coca-cola" id="in_coca"> <br>
+    <button onclick="ver()">ver quantidade</button>
+    <div id="zeca"></div>
+    
+</body>
+</html>
+<script>
+    function ver () {
+        var coca = Number (in_coca.value)
+        for (var cont = 0; cont < coca; cont ++){
+            zeca.innerHTML += `<img src="https://i.pinimg.com/originals/9d/60/a2/9d60a216af621cc0e12554cc0e69c492.jpg" alt="90px" height="100px">`
+        }
+    }
+</script>

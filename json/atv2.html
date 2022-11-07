@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Nome do produto:</p> <input type="text" placeholder="produto" id="in_prod">
+
+
+    <p>Preço do produto:</p>
+    <input type="number" placeholder="$$$" id="in_preco">
+
+    <strong>
+        <p>Produtos</p>
+    </strong>
+    <select name="" id="in_produto">
+        <option value="">--selecione--</option>
+        <option value="gerais">Gerais</option>
+        <option value="alimentos">Alimentos</option>
+        <option value="eletronicos">Eletronicos</option>
+    </select>
+    <br><br>
+
+    <button onclick="registrar()">Registrar produto</button>
+
+    <button onclick="verificar ()"> verificar produto (s)</button>
+    <div id="zeca"></div>
+<br><br><br>
+    <strong>
+        <p>pesquisar por tipo <br> --filtro--</p>
+    </strong>
+    <select name="" id="in_filtro">
+        <option value="">--selecione--</option>
+        <option value="gerais">gerais</option>
+        <option value="alimentos">alimentos</option>
+        <option value="eletronicos">eletronicos</option>
+    </select>
+
+    <p>pesquisar por produto</p>
+    <input type="text" name="" id="in_pesquisa">
+    <button onclick="procurar()">procurar</button>
+    <div id="procu"></div>
+
+</body>
+
+</html>
+<script>
+    var banco = []
+    function registrar() {
+        var produto = {
+            nome: in_prod.value,
+            preco: in_preco.value,
+            tipo: in_produto.value
+        }
+        if (produto.nome == 0 || produto.preco == 0 || produto.tipo == 0) {
+            alert("Verifique o preenchimento dos campos e tente novamente")
+        } else {
+
+            banco.push(produto) // Json para puxar o conteudo.
+        }
+    }
+
+    function verificar() {
+
+        if (banco.length == "") {
+            alert("Não há produtos registrados na lista")
+            zeca.innerHTML = ""
+
+        } else {
+            for (cont = 0; cont < banco.length; cont++) {
+                var atual = banco[cont]
+                zeca.innerHTML += `produto: ${atual.nome } <br>
+                                   preço: R$ ${atual.preco} <br>
+                                   tipo: ${atual.tipo }
+                                   <br><br>`
+            }
+        }
+    }
+// -----------------------------------------------------------------------------------------------------------------------------
+    var banco_procurar = []
+    function procurar() {
+        var procurar = {
+            pesquisa: (in_pesquisa.value) = banco.nome,
+            filtro: (in_filtro.value) = banco.tipo
+        }
+        
+
+        if (banco_procurar.length == "") {
+            alert("Não há nenhum produto com este NOME registrado!")
+            alert ("Não há nenhum produto com este TIPO registrado!")
+            procu.innerHTML = ``
+
+        } 
+        // else if (banco_procurar.length != procurar.filtro) {
+        //     alert ("Não há nenhum produto com este TIPO registrado!")
+        //     procu.innerHTML = ``
+        // }
+        
+        else {
+            banco_procurar.push(procurar)
+
+            for (i = 0; i < banco_procurar.length; i++){
+                banco_procurar = banco
+                var now = banco_procurar[i] 
+
+                if (now.pesquisa == atual.nome && now.filtro == atual.tipo ) {
+            procu.innerHTML += ` produto: ${now.pesquisa} <br>                 
+                                 tipo: ${now.filtro}<br>   `
+                }
+            }
+        }
+    }
+
+</script>

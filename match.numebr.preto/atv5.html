@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>SIMULAÇÃO DO JO KEN PO</h2>
+    <br>
+    <button onclick="jogar()">Jogar</button>
+
+    <br><br>
+
+    <img height="200px" id="img_decisao">
+    
+</body>
+</html>
+
+<script>
+
+    function jogar(){
+
+        var num = parseInt(Math.random() * 3)
+
+        url_img = ""
+
+        if(num == 0){
+            url_img = "https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg"
+        }
+        if(num == 1){
+            url_img = "https://blog.kalunga.com.br/wp-content/uploads/2022/01/papel-sulfite-principal.jpeg"
+        }
+        if(num == 2){
+            url_img = "https://7106.cdn.simplo7.net/static/7106/sku/acessorios-tesoura-grande-mundial-profissional-aco-inox-costura--p-1622655868602.png"               
+        }
+        img_decisao.src = url_img
+    }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button onclick="dado_jogador1()">Jogador 1 jogar dadinho</button>
+    <br>
+    <div id="div_jogador1"></div>
+
+
+    <br><br>
+
+    <button onclick="dado_jogador2()">Jogador 2 jogar dadinho</button>
+    <br>
+    <div id="div_jogador2"></div>
+
+    <br><br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    var jogador_dado1 = 0
+    var jogador_dado2 = 0
+
+    function dado_jogador1(){
+        jogador_dado1 = parseInt(1 + Math.random() * 6)
+        div_jogador1.innerHTML = `Seu resultado ${jogador_dado1}`
+    }
+
+    function dado_jogador2(){
+        jogador_dado2 = parseInt(1 + Math.random() * 6)
+        div_jogador2.innerHTML = `Seu resultado ${jogador_dado2}`
+
+        placar()
+    }
+
+    function placar(){
+        var mensagem = ""
+        if(jogador_dado1 > jogador_dado2){
+            mensagem = "Jogador 1 venceu" 
+        }
+        
+        if(jogador_dado2 > jogador_dado1){
+            mensagem = "Jogador 2 venceu" 
+        }
+
+        if(jogador_dado2 == jogador_dado1){
+            mensagem = "EMPATE"
+        }
+        div_mensagem.innerHTML = mensagem
+    }
+
+
+</script>

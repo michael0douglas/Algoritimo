@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    limite inferior da amostra <input type="number" placeholder="inferior" id="in_inf"> <br>
+
+    limite superior da amostra <input type="number" placeholder="superior" id="in_sup"> <br>
+
+    numero para teste de divisibilidade <input type="number" placeholder=" entre 3 e 10" id="in_div"> <br>
+
+    <button onclick="conta()">contar</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function conta () {
+        zeca.innerHTML += ""
+        var inf = Number (in_inf.value)
+        var sup = Number (in_sup.value)
+        var div = Number (in_div.value)
+
+        if (inf < 0 || sup > 100){
+            alert (`ERROR! limite atingido!`)
+        } else if (div < 3 || div > 10){
+            alert (`a divisao tem que ser entre 3 e 10!`)
+        } else {
+            for (var cont = inf; cont <= sup; cont ++){
+                if (cont % div == 0){
+                    zeca.innerHTML += `${cont} <br>`
+                }
+            }
+        }
+    }
+</script>

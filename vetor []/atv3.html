@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Cadastre seu bairro: 
+    <input type="text" id="in_bairro">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar bairro</button>
+
+    <br><br>
+
+    Digite o número do local que você morou: 
+    <input type="text" id="in_num">
+    <br><br>
+    <button onclick="relembrar()">Relembrar moradia</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    var bairro = []
+    function cadastrar(){
+        bairro.push(in_bairro.value)
+
+    }
+
+    function relembrar(){
+        var num = Number((in_num.value) - 1)
+
+        var mensagem 
+        if(!bairro[num]){
+            mensagem = `Você ainda não morou num ${num+1}º bairro!`
+        }
+        else{
+            mensagem = `Você morou num ${num + 1}º ${bairro[num]}!`
+        }
+
+        div_mensagem.innerHTML = mensagem
+
+    }
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>nome do produto</p> <input type="text" placeholder="produto" id="in_produto">
+
+    <p>preço produto</p> <input type="number" placeholder="preço$$" id="in_preco">
+
+    <button onclick="registrar()">registrar produto</button>
+    <div id="zeca"></div>
+
+    <button onclick="verificar ()"> verificar produtos </button>
+    <div id="zecas"></div>
+
+
+</body>
+
+</html>
+<script>
+    var cadastrar = []
+    function registrar() {
+        var geral = {
+            nome: in_produto.value,
+            preco: in_preco.value
+        }
+        
+        //  for (var cont = 0; cont < cadastrar.length; cont++){
+            //         var atual = cadastrar [cont]
+            
+            if (geral.nome == "" || geral.preco == "") {
+                
+                alert ("Inválido! Verifique o preenchimento dos campos e tente novamente!")
+                zecas.innerHTML = ""
+                // }
+            } else {
+                cadastrar.push(geral)
+            }
+
+    }
+    function verificar() {
+        if (cadastrar.length == 0) {
+            alert("Não há produtos registrados na lista!")
+            zecas.innerHTML = ""
+
+        } else {
+            for (var cont = 0; cont < cadastrar.length; cont++) {
+                var atual = cadastrar[cont]
+
+                zecas.innerHTML += `produto: ${atual.nome}   <br>
+                            preço: ${atual.preco}  <br> <br>`
+            }
+        }
+    }
+</script>

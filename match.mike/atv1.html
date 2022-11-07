@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortear()">sortear</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function sortear() {
+        var menor = Math.random()
+        if(menor > 0.5){
+            zeca.innerHTML = `eu arredondaria para 1 <br >nota:${menor.toFixed(3)}`
+        } else {
+            zeca.innerHTML = `eu arredondaria para 0 <br> nota:${menor.toFixed(3)}`
+        }
+    }
+</script>

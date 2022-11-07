@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    Informe o nome dos projetos que você já fez na vida: 
+    <br>
+    <input type="text" id="in_projeto">
+
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar Projeto</button>
+    <button onclick="exibir()">Mostrar Projetos</button>
+    <br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    var projetos = []
+    function cadastrar(){
+        projetos.push(in_projeto.value)
+
+        var profissional = ''
+        var quantidade_projeto = projetos.length
+        var posicao_projeto = ''
+
+        var mensagem_completa = ""
+        if(quantidade_projeto <= 4){
+            profissional = "Júnior"
+            mensagem_completa = profissional
+        }
+        else if(quantidade_projeto <= 12){
+            profissional = "Pleno"
+            posicao_projeto = projetos[4]
+
+            mensagem_completa = `${profissional} desde o projeto "${posicao_projeto}"`
+            
+        }
+        else{
+            profissional = "Sênior" 
+            posicao_projeto = projetos[12]
+            mensagem_completa = `${profissional} desde o projeto "${posicao_projeto}"`
+            
+        }
+        
+        var mensagem =  ""
+        mensagem = `Você já fez ${quantidade_projeto} projetos. Por isso você é um profissional ${mensagem_completa}`
+
+        div_mensagem.innerHTML = mensagem
+    }
+
+    function exibir(){
+
+        var mensagem = ''
+
+        for(i = (projetos.length - 1); i >= 0; i--){
+            mensagem += `Projeto: ${projetos[i]}<br>`
+        } 
+        div_mensagem.innerHTML = mensagem
+    }
+</script>

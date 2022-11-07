@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantas xicaras de café com leite voce ja tomou na vida? <input type="number" placeholder="Café com leite" id="in_cafe"> <br>
+    
+    <button onclick="ver()">ver quantidade</button>
+    <div id="zeca" ></div>
+</body>
+</html>
+<script>
+    function ver () {
+        zeca.innerHTML = ""
+        var xi = Number (in_cafe.value)
+        var leite = xi
+        var café = leite * 2
+        for (var cont = 0; cont < xi; cont ++){
+            zeca.innerHTML = `A quantidade de colher de leite que você usou até agora é de ${leite} <br> e colheres de café foi de ${café}`
+        }
+    }
+</script>

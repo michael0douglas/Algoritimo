@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite seu nome: 
+    <input type="text" id="in_nome">
+
+    <br><br>
+    Digite seu número da sorte: (1 até 10)
+    <input type="number" id="in_num_sorte">
+
+
+    <br><br>
+    <button onclick="sortear()">Sortear</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+
+    function sortear(){
+        var num = Number(in_num_sorte.value)
+        var nome = in_nome.value
+
+        var contador = 0
+        if(num >= 1 && num <= 10){
+
+            for(i = 0; i != num;){
+                i = parseInt(1 + Math.random() * 10)
+                contador++
+            }
+
+            div_mensagem.innerHTML = `Parabéns, ${nome} você foi sorteado(a) após ${contador} sorteios!`
+        }
+        else{
+            alert("Digite um número entre o intervalo de 1 a 10")
+        }
+    }
+
+</script>

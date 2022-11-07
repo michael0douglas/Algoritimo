@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual sua nota? <br>
+    <input type="number" placeholder="10" id="in_nota"> <br>
+    qua sua frequencia? <br>
+    <input type="number" placeholder="80%" id="in_freq">
+    <button onclick="ava()">avaliar</button>
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function ava () {
+        var nota = Number (in_nota.value)
+        var freq = Number (in_freq.value)
+        var aprov = nota.toFixed(2) > 6 && freq.toFixed(2) > 75
+        var repn = nota.toFixed(2) < 6
+        var repf = freq.toFixed(2) < 75
+        var mens = ""
+        if (aprov) {
+            mens = "Parabéns, aprovado(a)"
+        } if (repn) {
+            mens += " <br> Reprovado(a) por nota!"
+        } if (repf) {
+            mens += " <br> Reprovado(a) por frequencia!"
+        }
+        zeca.innerHTML = mens
+    }
+</script>

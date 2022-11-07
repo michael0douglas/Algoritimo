@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="sortear_dado()">Sortear dado</button>
+
+    <br><br>
+    <img height="150px" id="img_dado">
+</body>
+</html>
+
+<script>
+
+    function sortear_dado(){
+        var num = parseInt(1 + Math.random() * 6)
+
+        var url_img
+        if(num == 1){
+            url_img = "https://www.dlf.pt/png/list/7/73398_dice-faces-png.png"
+        }
+        if(num == 2){
+            url_img = "http://tex22.info/rm/CS4-Teacher/Content/Resources/Images/Computer%20Science/CS%203%20and%204/dice%202.png"
+        }
+        if(num == 3){
+            url_img = "https://media.4teachers.de/images/thumbs/image_thumb.22975.png"
+        }
+        if(num == 4){
+            url_img = "https://media.4teachers.de/images/thumbs/image_thumb.22976.png"
+        }
+        if(num == 5){
+            url_img = "https://dobbelsteen.virtuworld.net/img/5c.gif"
+        }
+        if(num == 6){
+            url_img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4t44B2wOK82QvMggVLtC5OWkfUszaKMULqz_-PiqmWKQpgpk73Muvmp-9dqzcQRfwsYs&usqp=CAU"
+        }
+
+        img_dado.src = url_img
+        
+    }
+</script>

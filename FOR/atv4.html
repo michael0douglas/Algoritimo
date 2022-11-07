@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    limite inferior de amostras <input type="number" placeholder="Inferior" id="in_inf"> <br>
+
+    limite superior de amostras <input type="number" placeholder="Superor" id="in_sup"> <br>
+
+    <button onclick="conta()">contar</button> 
+    <div id="zeca"></div>
+</body>
+</html>
+<script>
+    function conta () {
+        var inf = Number (in_inf.value)
+        var sup = Number (in_sup.value)
+         if (inf < 1 && sup > 100){
+            alert ("ERROR! limite atingido")
+         } else {
+            for (var contador = inf; contador <= sup; contador ++){
+                zeca.innerHTML += `${contador} <br>`
+            }
+        }
+    }
+</script>

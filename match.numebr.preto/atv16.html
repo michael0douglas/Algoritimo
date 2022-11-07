@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>FASES DA LUA</h2>
+    
+    <br>
+    <button onclick="ver_lua()">Ver a Lua</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+    <br>
+    <img height="150px" id="img_lua">
+
+</body>
+</html>
+
+<script>
+
+    function ver_lua(){
+        var num = parseInt(1 + Math.random() * 30)
+
+        var url_img = ""
+        var mensagem = ""
+
+        if(num <= 7){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png"
+        }
+        else if(num <= 16){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png"
+        }
+        else if(num <= 22){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png"
+        }
+        else{
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png"
+        }
+
+        mensagem = `Seu di sorteado foi: ${num}`
+
+        img_lua.src = url_img
+        div_mensagem.innerHTML = mensagem
+    }
+</script>

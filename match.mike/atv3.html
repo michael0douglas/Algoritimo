@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dado()">jogar dado</button>
+    <div id="zeca"></div>
+    <!-- <img src="" alt="" height=""> -->
+</body>
+</html>
+<script>
+    function dado () {
+        var dado = parseInt(1+ Math.random() * 6)
+        if (dado < 0.9){
+            zeca.innerHTML = `<img src="https://images.vectorhq.com/images/previews/27e/dado-1-138329.png" alt = "150px" height="80px">`
+        } 
+        else if (dado < 1.9) {
+            zeca.innerHTML = `<img src="https://openclipart.org/image/800px/96085" alt = "150px" height="80px">`
+
+        }
+        else if (dado < 2.9) {
+            zeca.innerHTML = `<img src="http://www.i2clipart.com/cliparts/a/9/e/5/clipart-dado-3-256x256-a9e5.png" alt = "150px" height="80px">`
+        }
+        else if (dado < 3.9) {
+            zeca.innerHTML = `<img src="https://openclipart.org/image/800px/96097" alt = "150px" height="80px">`
+
+        }
+        else if (dado < 4.9) {
+            zeca.innerHTML = `<img src="http://www.i2clipart.com/cliparts/2/3/3/b/clipart-dado-5-256x256-233b.png" alt = "150px" height="80px">`
+        }
+        else if (dado < 5.9) {
+            zeca.innerHTML = `<img src="https://dobbelsteen.virtuworld.net/img/6c.gif" alt = "150px" height="80px">`
+        }
+ 
+ 
+ 
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>numeros aleatorios</h2>
+    <button onclick="sorteio()"> de 0 até menos que 1</button> <br>
+
+    <button onclick="sorteio1()"> de 0 até menos que 100</button> <br>
+
+    <button onclick="sorteio2()"> de 1 até menos que 10</button>
+    <br>
+
+    <button onclick="sorteio3()"> de 1 até menos que 10</button>
+    <br>
+    <button onclick="sorteio4()"> dadinho: inteiro de 1 até 6</button>
+</body>
+</html>
+<script>
+    function sorteio () {
+        var sorteado = Math.random()
+        alert (`sorteado: ${sorteado}`)
+    }
+
+    function sorteio1 () {
+        var sorteado = Math.random() * 100
+        alert (`sorteado: ${sorteado}`)
+    }
+
+    function sorteio2 () {
+        var sorteado = (1 + Math.random() * 9)
+        alert (`sorteado: ${sorteado}`)
+    }
+
+    function sorteio3 () {
+        var sorteado = parseInt (1 + Math.random() * 10)
+        alert (`sorteado: ${sorteado}`)
+    }
+
+    function sorteio4 () {
+        var sorteado = parseInt (1 + Math.random() * 6)
+        alert (`sorteado: ${sorteado}`)
+    }
+</script>

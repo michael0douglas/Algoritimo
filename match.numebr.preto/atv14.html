@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Avaliação de atendente</h2>
+
+    <button onclick="avaliar()">Avaliar</button>
+
+    <br><br>
+    <button onclick="media()">Equipe</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+
+    <br>
+    <img height="150px" id="img_emoji">
+
+
+</body>
+</html>
+
+<script>
+
+    var nota = 0 
+    var qnt_avaliacao = 0
+
+    function avaliar(){
+        
+        var num = Math.random() * 5
+        num = Number(num.toFixed(1))
+        
+        qnt_avaliacao++
+        nota += num
+
+        var url_img = ""
+        
+        if(num < 0.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png"
+        }
+        else if(num < 1.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png"
+        }
+        else if(num < 3.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png"
+        }
+        else if(num < 4.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png"
+        }
+        else{
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png"
+        }
+        img_emoji.src = url_img
+        div_mensagem.innerHTML = `Nota recebida: ${num}`
+    }
+
+    function media(){
+
+        var media = nota / qnt_avaliacao
+
+        media = Number(media.toFixed(1))
+        var url_img = ""
+        
+        if(media < 0.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png"
+        }
+        else if(media < 1.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png"
+        }
+        else if(media < 3.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png"
+        }
+        else if(media < 4.5){
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png"
+        }
+        else{
+            url_img = "https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png"
+        }
+        img_emoji.src = url_img
+        div_mensagem.innerHTML = `Média Geral: ${media}`
+
+    }
+</script>

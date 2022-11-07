@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>frutas</h2>
+
+    <input type="text" placeholder="fruta" id="in_frutas">
+    <button onclick="pesquisar()">pesquisar</button>
+    <div id="zeca"></div>
+
+</body>
+</html>
+<script>
+    var frutas = ["manga","uva","limão","banana"] // vetor ja com dados em banco
+
+    function pesquisar () {
+    
+        var fruta = (in_frutas.value)
+        var menssagem = `Não existe a fruta ${fruta} na lista`
+        
+        for (var cont = 0; cont < frutas.length; cont ++){
+            if (fruta == frutas[cont]){
+                menssagem = `A fruta ${fruta} existe na lista`
+            }
+        }    
+        
+        zeca.innerHTML = menssagem
+    }
+    
+</script>

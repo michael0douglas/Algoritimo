@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="login" id="in_login"> <br>
+    <input type="password" placeholder="*******" id="passaword"> <br>
+    <button onclick="entrar()">entrar</button> <br>
+    <div id="zeca"></div>
+
+</body>
+</html>
+<script>
+    function entrar () {
+        var logi = (in_login.value) == 'aidimin'
+        var pass = (passaword.value) == 'seinha'
+        var conta = logi && pass
+        zeca.innerHTML = ""
+        var mens = 'Usuário autenticado com sucesso!'
+        var cor = "blue"
+        if (!conta) {
+            mens = ""
+        } if (!logi) {
+            cor = "red"
+            mens += '<br>Seu login está inválido!'
+        } if (!pass) {
+            cor = "red"
+            mens += ' <br>Sua senha está inválida!'
+        } if (logi) {
+            alert ('Entre em contato com o suporte para recuperar sua senha')
+        }
+        zeca.style.color = cor
+    zeca.innerHTML = mens
+    }
+</script>

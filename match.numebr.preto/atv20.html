@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Jogo de dadinho</h2>
+
+    Jogador 1: <span id="s_jogador1">0</span>
+    <br>
+    Jogador 2: <span id="s_jogador2">0</span>
+    <br>
+    Empate: <span id="s_empate">0</span>
+
+    <br><br>
+
+    <button onclick="jogar()">Jogar</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    var placar_j1 = 0
+    var placar_j2 = 0
+    var placar_e = 0
+    
+    function jogar(){
+        var jogador1 = parseInt(1 + Math.random() * 6)
+        var jogador2 = parseInt(1 + Math.random() * 6)
+
+        var mensagem = ""
+
+        console.log(jogador1)
+        if(jogador1 < jogador2){
+            mensagem = "O jogador 1 está vencendo"
+            placar_j1++
+        }
+
+        if(jogador1 > jogador2){
+            mensagem = "O jogador 2 está vencendo"
+            placar_j2++
+        }
+        
+        if(jogador1 == jogador2){
+            mensagem = "Jogo empatado"
+            placar_e++
+        }
+
+        div_mensagem.innerHTML = mensagem
+
+        s_jogador1.innerHTML = placar_j1
+        s_jogador2.innerHTML = placar_j2
+        s_empate.innerHTML = placar_e
+        
+    }
+</script>

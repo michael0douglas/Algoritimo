@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sorte()">sortear time</button>
+    <div id="zeca"></div>
+    <!-- <img src="" alt=""> -->
+</body>
+</html>
+<script>
+    function sorte() {
+        var time = Math.random()
+        if (time < 0.2){
+            zeca.innerHTML = `<img src="https://i.pinimg.com/originals/21/0d/a4/210da4e8e82f09467b1170add3e41519.png" alt="150px">`
+        }else if (time < 0.4){
+            zeca.innerHTML = `<img src="https://static.netshoes.com.br/produtos/bandeira-palmeiras-torcedor/54/0NQ-0063-054/0NQ-0063-054_zoom1.jpg?ts=1649859895&ims=420x" alt="150px">`
+    }else if (time < 0.6){
+            zeca.innerHTML = `<img src="https://cf.shopee.com.br/file/9b2bb158a62fa93be151599871625899_tn" alt="150px">`
+    }else {
+            zeca.innerHTML =`<img src="https://images.tcdn.com.br/img/img_prod/213069/bandeira_do_sao_paulo_futebol_clube_1324_2_20180908114327.jpg" alt="50px">`}
+    }
+
+</script>
